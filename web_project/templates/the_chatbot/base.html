@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+     <div class="container">
+         <ul class="nav navbar-nav">
+             <li><a class="navbar-brand" href="{% url 'index' %}">BRAND</a></li>
+             <li><a class="navbar-link" href="{% url 'admin:index' %}">ADMIN</a></li>
+             <li><a class="navbar-link" href="{% url 'the_chatbot:register' %}">REGISTER</a></li>
+
+
+             {% if user.is_authenticated %}
+                <li><a class="navbar-link" href="{% url 'logout' %}">LOGOUT</a></li>
+             {% else %}
+               <li><a class="navbar-link" href="{% url 'the_chatbot:user_login' %}">Login</a></li>
+             {% endif %}
+
+
+         </ul>
+     </div>
+    
+    </nav>
+
+    <div class="container">
+        {% block body_block %}
+        <!--anything outside of this will be inherited if you extend-->
+        {% endblock %}
+    </div>
+
+    </body>
+</html>
