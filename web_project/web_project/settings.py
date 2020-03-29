@@ -27,7 +27,7 @@ SECRET_KEY = 'zs$-y87)fg_d(+4q$dqb11xa)j3q-0uazb=j^ov)pe^(4m08rs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ 'mishrankita.pythonanywhere.com']
 
 
 # Application definition
